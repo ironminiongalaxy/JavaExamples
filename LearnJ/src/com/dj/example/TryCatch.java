@@ -4,6 +4,12 @@ import java.util.Random;
 
 import com.dj.example.utils.CustException;
 
+/**
+ * Examples to the Try Catch blocks; Nested Class; Examples for Exceptions
+ * 
+ * @author digvijay
+ * 
+ */
 public class TryCatch {
 	private static int d = 4, a, test[] = { 1 };
 
