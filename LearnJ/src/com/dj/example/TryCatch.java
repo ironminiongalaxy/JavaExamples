@@ -4,6 +4,13 @@ import java.util.Random;
 
 import com.dj.example.utils.CustException;
 
+/**
+ * Examples for Nested Try Catch; Exceptions; Custom Exception; initCause();
+ * getCause()
+ * 
+ * @author ironminiongalaxy
+ * 
+ */
 public class TryCatch {
 	private static int d = 4, a, test[] = { 1 };
 
