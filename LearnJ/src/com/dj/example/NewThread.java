@@ -3,9 +3,9 @@ package com.dj.example;
 public class NewThread extends Thread {
 
 	NewThread() {
-		t = new Thread(this, "New Thread");
-		System.out.println("Child Thread: " + t);
-		t.start();
+		super("New Thread");
+		System.out.println("Child Thread: " + this);
+		start();
 		System.out.println("After exiting Child Thread");
 	}
 
