@@ -4,7 +4,8 @@ public class ThreadEg {
 
 	public static void main(String[] args) {
 
-		new NewThread();
+		NewThread t1 = new NewThread("Thread1");
+		NewThread t2 = new NewThread("Thread2");
 		Thread t = Thread.currentThread();
 		System.out.println("Current Thread Name : " + t.getName());
 		System.out.println("Current Thread: " + t);
@@ -22,6 +23,17 @@ public class ThreadEg {
 			System.out.println("Main Thread Interrupted");
 			e.printStackTrace();
 		}
+
+		try {
+			t1.t.join();
+			t2.t.join();
+		} catch (InterruptedException ex) {
+			System.out.println("Unable to stop Threads");
+		}
+
+		System.out.println("Thread 1 status: " + t1.t.isAlive());
+		System.out.println("Thread 2 status: " + t2.t.isAlive());
+
 		System.out.println("Main Thread complete");
 	}
 

@@ -1,24 +1,26 @@
 package com.dj.example;
 
-public class NewThread extends Thread {
+public class NewThread implements Runnable {
+	String name;
+	Thread t;
 
-	NewThread() {
-		super("New Thread");
-		System.out.println("Child Thread: " + this);
-		start();
+	NewThread(String threadName) {
+		name = threadName;
+		t = new Thread(this, name);
+		System.out.println("Child Thread: " + t);
+		t.start();
 		System.out.println("After exiting Child Thread");
 	}
 
 	public void run() {
 		try {
 			for (int i = 5; i > 0; i--) {
-				System.out.println("Child Thread: " + i);
-				Thread.sleep(500);
+				System.out.println("Child Thread: " + name + ": " + i);
+				Thread.sleep(1000);
 			}
 		} catch (InterruptedException ex) {
 			System.out.println("Child Interrupted");
 		}
-		System.out.println("Exiting Child Thread");
+		System.out.println("Exiting Child Thread " + name);
 	}
-
 }
