@@ -18,8 +18,10 @@ public class StringSamples {
 			System.out.println(a[i]);
 		}
 
+		System.out.println("------------------------------");
 		for (int i : reflection())
 			System.out.println(i);
+		System.out.println("------------------------------");
 
 		System.out.println("12434");
 		System.out.println(allUnique(null));
@@ -85,7 +87,7 @@ public class StringSamples {
 		Object obj = cls.newInstance();
 		int[] a = new int[] { 1, 2, 43, 56, 3, 5, 1 };
 
-		Method sort = cls.getMethod("quickSort", new Class[] { int[].class });
+		Method sort = cls.getMethod("qSort", new Class[] { int[].class });
 		Character b = 'b';
 		return (int[]) sort.invoke(obj, a);
 	}
@@ -126,7 +128,6 @@ public class StringSamples {
 					matchCount++;
 					continue;
 				}
-				
 
 			}
 			i++;
